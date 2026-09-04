@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: artgallery-api
+  profiles:
+    active: dev
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 15MB
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized
+
+app:
+  jwt:
+    secret: dGhpc2lzYXZlcnlsb25nc2VjcmV0a2V5Zm9yYXJ0Z2FsbGVyeWp3dGF1dGhlbnRpY2F0aW9ucGhhc2VhMjAyNGJhc2U2NGVuY29kZWQ=
+    access-token-expiration: PT15M
+    refresh-token-expiration: P7D
+  cors:
+    allowed-origins:
+      - http://localhost:5173
+      - http://127.0.0.1:5173
+  media:
+    upload-dir: ./uploads

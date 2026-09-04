@@ -1,0 +1,25 @@
+# Art Gallery API
+
+Ignore IDE / build / runtime artifacts
+
+target/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# Runtime data
+data/
+uploads/
+*.db
+*.mv.db
+*.trace.db
+
+# Logs
+*.log
+
+# Env
+.env
+.env.local
